@@ -1,5 +1,5 @@
-# Simple React Boilerplate
-A simple Boilerplate project for ReactJS
+# React Todo
+A simple Todo app written in ReactJS
 
 ## Getting Started
 ### Install dependencies
