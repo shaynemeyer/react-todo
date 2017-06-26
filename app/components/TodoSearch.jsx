@@ -1,19 +1,7 @@
 var React = require('react');
 
 class TodoSearch extends React.Component {
-  // handleSubmit(e){
-  //   e.preventDefault();
-  //   var todoText = this.refs.todoText.value;
-  //
-  //   if(todoText.length > 0) {
-  //     this.refs.todoText.value = '';
-  //     this.props.onAddTodo(todoText);
-  //   } else {
-  //     this.refs.todoText.focus();
-  //   }
-  // }
-
-  handleSearch() {
+  handleSearch = () => {
     var showCompleted = this.refs.showCompleted.checked;
     var searchText = this.refs.searchText.value;
 
@@ -24,11 +12,11 @@ class TodoSearch extends React.Component {
     return (
       <div>
         <div>
-          <input type="text" ref="searchText" placeholder="Search todos" onChange={this.handleSearch.bind(this)}/>
+          <input type="text" ref="searchText" placeholder="Search todos" onChange={this.handleSearch}/>
         </div>
         <div>
           <label htmlFor="">
-            <input type="checkbox" ref="showCompleted" placeholder="Search todos" onChange={this.handleSearch.bind(this)}/>
+            <input type="checkbox" ref="showCompleted" placeholder="Search todos" onChange={this.handleSearch}/>
             Show completed todos
           </label>
         </div>

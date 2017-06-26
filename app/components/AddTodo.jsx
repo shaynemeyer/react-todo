@@ -1,7 +1,7 @@
 var React = require('react');
 
 class AddTodo extends React.Component {
-  handleSubmit(e){
+  handleSubmit = (e) => {
     e.preventDefault();
     var todoText = this.refs.todoText.value;
 
@@ -16,7 +16,7 @@ class AddTodo extends React.Component {
   render(){
     return (
       <div>
-        <form ref="form" onSubmit={this.handleSubmit.bind(this)} className="todo-form">
+        <form ref="form" onSubmit={this.handleSubmit} className="todo-form">
           <input type="text" ref="todoText" placeholder="What do you need to do?"/>
           <button className="button expanded">Add Todo</button>
         </form>
