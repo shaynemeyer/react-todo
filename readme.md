@@ -1,6 +1,9 @@
 # React Todo
 A simple Todo app written in ReactJS
 
+## The App
+![](todoapp.png)
+
 ## Getting Started
 ### Install dependencies
 ```bash
