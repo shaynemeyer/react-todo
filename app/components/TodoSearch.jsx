@@ -1,22 +1,24 @@
 var React = require('react');
+var {connect} = require('react-redux');
+var actions = require('actions');
 
-class TodoSearch extends React.Component {
-  handleSearch = () => {
-    var showCompleted = this.refs.showCompleted.checked;
-    var searchText = this.refs.searchText.value;
-
-    this.props.onSearch(showCompleted, searchText);
-  }
-
+export class TodoSearch extends React.Component {
   render(){
+    var {dispatch, showCompleted, searchText} = this.props;
+
     return (
       <div className="container__header">
         <div>
-          <input type="text" ref="searchText" placeholder="Search todos" onChange={this.handleSearch}/>
+          <input type="text" ref="searchText" placeholder="Search todos" value={searchText} onChange={() => {
+            var searchText = this.refs.searchText.value;
+            dispatch(actions.setSearchText(searchText));
+          }}/>
         </div>
         <div>
           <label htmlFor="">
-            <input type="checkbox" ref="showCompleted" placeholder="Search todos" onChange={this.handleSearch}/>
+            <input type="checkbox" ref="showCompleted" checked={showCompleted} placeholder="Search todos" onChange={() => {
+              dispatch(actions.toggleShowCompleted());
+            }}/>
             Show completed todos
           </label>
         </div>
@@ -25,4 +27,11 @@ class TodoSearch extends React.Component {
   }
 }
 
-module.exports = TodoSearch;
+export default connect(
+  (state) => {
+    return {
+      showCompleted: state.showCompleted,
+      searchText: state.searchText
+    }
+  }
+)(TodoSearch);
