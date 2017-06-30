@@ -13,9 +13,6 @@ describe('Reducers', () => {
       var res = reducers.searchTextReducer(df(''), df(action));
       expect(res).toEqual(action.searchText);
     });
-
-    // test that the showCompleted status gets flipped
-
   });
 
   describe('showCompletedReducer', () => {
