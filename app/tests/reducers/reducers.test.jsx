@@ -43,7 +43,6 @@ describe('Reducers', () => {
       expect(res[0]).toEqual(action.todo);
     });
 
-    // define todos array with realistic todo item
     it('should update todo', () => {
       var todos = [{
         id: '123',
